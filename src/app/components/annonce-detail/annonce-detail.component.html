@@ -1,0 +1,12 @@
+<div class="row justify-content-center align-items-center">
+  <div *ngIf="annonce" class="col-md-8">
+    <h2 class="mt-3 mb-3" style="text-align: center">{{annonce.titre}}</h2>
+    <div class="row">
+      <div class="container col-md-6">
+        <div class="col-md-12">
+          <app-annonce [annonce]="annonce" [isList]="false"></app-annonce>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
