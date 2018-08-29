@@ -28,9 +28,9 @@ module.exports = function (config) {
       outputFile: 'test-result.xml'
     },
     customLaunchers:{
-      ChromeHeadless: {
-        base: 'Chrome',
-        flasgs: [
+      HeadlessChrome: {
+        base: 'ChromeHeadless',
+        flags: [
           '--headless',
           '--disable-gpu',
           '--no-sandbox',
@@ -43,7 +43,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['ChromeHeadless'],
+    browsers: ['HeadlessChrome'],
     singleRun: false
   });
 };
