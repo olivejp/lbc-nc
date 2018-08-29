@@ -25,6 +25,7 @@ export class AnnonceDetailComponent implements OnInit {
         console.log('je suis rentré');
         this.selectedId = +params.get('id');
         return this.annonceService.findAnnonce(this.selectedId);
+        
       })
     );
 
