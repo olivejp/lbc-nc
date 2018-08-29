@@ -1,6 +1,6 @@
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/1.0/config/configuration-file.html
-process.env.CHROME_BIN = require('puppeteer').executablePath()
+process.env.CHROME_BIN = require('puppeteer').executablePath();
 
 module.exports = function (config) {
   config.set({
@@ -24,10 +24,16 @@ module.exports = function (config) {
       reports: ['html', 'lcovonly'],
       fixWebpackSourcePaths: true
     },
-    junitReporter:{
+    junitReporter: {
       outputFile: 'test-result.xml'
     },
-    customLaunchers:{
+    reporters: ['progress', 'junit'],
+    port: 9876,
+    colors: true,
+    logLevel: config.LOG_INFO,
+    autoWatch: true,
+    browsers: ['HeadlessChrome'],
+    customLaunchers: {
       HeadlessChrome: {
         base: 'ChromeHeadless',
         flags: [
@@ -38,12 +44,6 @@ module.exports = function (config) {
         ]
       }
     },
-    reporters: ['progress', 'junit'],
-    port: 9876,
-    colors: true,
-    logLevel: config.LOG_INFO,
-    autoWatch: true,
-    browsers: ['HeadlessChrome'],
     singleRun: false
   });
 };
